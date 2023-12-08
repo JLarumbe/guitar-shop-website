@@ -1,8 +1,10 @@
-package org.perscholas.casestudy.database.dao;
+package org.perscholas.casestudy.database.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.math.BigDecimal;
 
 @Getter
 @Setter
@@ -21,7 +23,7 @@ public class Product {
     private String productDescription;
 
     @Column(name = "product_MSRP")
-    private Double productMSRP;
+    private BigDecimal productMSRP;
 
     @Column(name = "image_url")
     private String imageUrl;
