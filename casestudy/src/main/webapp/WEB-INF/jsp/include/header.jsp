@@ -37,6 +37,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/auth/login">User Login</a>
                 </li>
+                <%--Make /product/create available ONLY to the ADMIN role--%>
+                <li class="nav-item">
+                    <a class="nav-link" href="/product/create">Create Product</a>
+                </li>
                 <sec:authorize access="hasAnyAuthority('ADMIN')">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Admin</a>
