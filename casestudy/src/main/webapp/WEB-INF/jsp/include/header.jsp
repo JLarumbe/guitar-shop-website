@@ -7,46 +7,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LJ's Guitars</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-          crossorigin="anonymous">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-            crossorigin="anonymous"></script>
-
+                                <%--Icons--%>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+                                <%--CSS--%>
+    <link rel="stylesheet" href="/pub/css/styles.css"/>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="/index">LJ</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/auth/register">User Registration</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/auth/login">User Login</a>
-                </li>
-                <%--Make /product/create available ONLY to the ADMIN role--%>
-                <li class="nav-item">
-                    <a class="nav-link" href="/product/create">Create Product</a>
-                </li>
-                <sec:authorize access="hasAnyAuthority('ADMIN')">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Admin</a>
-                    </li>
-                </sec:authorize>
-            </ul>
+<div id="header-main">
+    <a href="/"><img src="/pub/images/logo.jpg" alt="logo" /></a>
+    <div class="wrap">
+        <div class="search">
+            <input
+                    type="text"
+                    class="searchTerm"
+                    placeholder="What are you looking for?"
+            />
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
         </div>
     </div>
-</nav>
+    <a href="#">Account</a>
+    <a href="#"
+    ><i class="fa fa-shopping-cart" style="font-size: 36px"></i>
+    </a>
+</div>
+<div id="header-sub">
+    <ul>
+        <li><a href="#">Guitars</a></li>
+        <li><a href="#">Acoustics</a></li>
+        <li><a href="#">Basses</a></li>
+        <li><a href="#">Amps & Audio</a></li>
+        <li><a href="#">Effects Pedals</a></li>
+        <li><a href="#">Accessories</a></li>
+    </ul>
+</div>
