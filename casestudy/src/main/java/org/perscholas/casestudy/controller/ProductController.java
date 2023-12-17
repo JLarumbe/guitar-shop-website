@@ -11,7 +11,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -21,6 +24,26 @@ public class ProductController {
 
     @Autowired
     private ProductService productService;
+
+    @GetMapping("/product/search")
+    public ModelAndView search(@RequestParam String productName) {
+        ModelAndView response = new ModelAndView("product/search");
+
+        log.debug("In the product search controller method : search parameter = " + productName);
+
+        if (productName != null) {
+            List<Product> products = productDao.findByProductCategory(productName);
+
+            response.addObject("products", products);
+            response.addObject("productSearch", productName);
+
+            for(Product product: products){
+                log.debug("Product : " + product.getId() + " " + product.getProductName() + " " + product.getProductCategory());
+            }
+        }
+
+        return response;
+    }
 
     @GetMapping("/product/create")
     public ModelAndView createProduct() {

@@ -21,14 +21,18 @@
     <a href="/"><img src="/pub/images/logo.jpg" alt="logo" /></a>
     <div class="wrap">
         <div class="search">
-            <input
-                    type="text"
-                    class="searchTerm"
-                    placeholder="What are you looking for?"
-            />
-            <button type="submit" class="searchButton">
-                <i class="fa fa-search"></i>
-            </button>
+            <form id="search-form" method="get" action="/product/search">
+                <input
+                        type="text"
+                        class="searchTerm"
+                        placeholder="What are you looking for?"
+                        id="productName"
+                        name="productName"
+                />
+                <button type="submit" class="searchButton">
+                    <i class="fa fa-search"></i>
+                </button>
+            </form>
         </div>
     </div>
     <a href="#">Account</a>

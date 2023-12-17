@@ -3,14 +3,8 @@
 
 <jsp:include page="../include/header.jsp"/>
 
-<section>
-    <div class="bg-light2 pt-5 pb-5">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="m-0">User Registration</h1>
-            </div>
-        </div>
-    </div>
+<section id="registration-container">
+    <h1>Register</h1>
 </section>
 
 <section>
