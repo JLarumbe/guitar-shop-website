@@ -42,11 +42,11 @@
 </div>
 <div id="header-sub">
     <ul>
-        <li><a href="#">Guitars</a></li>
-        <li><a href="#">Acoustics</a></li>
-        <li><a href="#">Basses</a></li>
-        <li><a href="#">Amps & Audio</a></li>
-        <li><a href="#">Effects Pedals</a></li>
-        <li><a href="#">Accessories</a></li>
+        <li><a href="/product/search?productName=guitar">Guitars</a></li>
+        <li><a href="/product/search?productName=acoustic">Acoustics</a></li>
+        <li><a href="/product/search?productName=bass">Basses</a></li>
+        <li><a href="/product/search?productName=amp">Amps & Audio</a></li>
+        <li><a href="/product/search?productName=pedal">Effects Pedals</a></li>
+        <li><a href="/product/search?productName=picks">Accessories</a></li>
     </ul>
 </div>

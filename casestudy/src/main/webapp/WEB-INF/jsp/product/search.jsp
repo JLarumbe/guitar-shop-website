@@ -18,7 +18,7 @@
             </c:forEach>
         </c:when>
         <c:otherwise>
-            <p>No products found</p>
+            <p>No products found for "${productSearch}"</p>
         </c:otherwise>
     </c:choose>
 
