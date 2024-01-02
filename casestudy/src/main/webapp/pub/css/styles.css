@@ -131,4 +131,81 @@ a {
 
 /*Register*/
 
+/*Product Card*/
+
+.product-card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.listing
+{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    top: 20%;
+    left: 50%;
+    width: 800px;
+}
+
+.product
+{
+    width: 240px;
+    position: relative;
+}
+
+.product a
+{
+    text-decoration: none;
+}
+
+.img-wrapper
+{
+    display: block;
+    width: 100%;
+    height: 240px;
+    border: 1px solid #afafaf;
+    border-bottom: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+.img-wrapper img {
+    width: 35%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.info
+{
+    width: 100%;
+    background: #000;
+    color: #fff;
+    position: relative;
+    padding: 40px 10px 20px 10px;
+    text-align: center;
+
+
+}
+.title a
+{
+    color: inherit;
+}
+
+.price
+{
+    background: #e32d2c;
+    position: absolute;
+    font-size: 1.3em;
+    padding: 4px 13px;
+    top: -15px;
+    right: 10px;
+}
 /*Footer*/
