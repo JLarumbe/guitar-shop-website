@@ -7,6 +7,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="m-0">Account</h1>
+                <h2>${user.email}</h2>
             </div>
         </div>
     </div>
