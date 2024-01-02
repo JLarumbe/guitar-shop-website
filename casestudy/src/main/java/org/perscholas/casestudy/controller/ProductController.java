@@ -34,6 +34,10 @@ public class ProductController {
         if (productName != null) {
             List<Product> products = productDao.findByProductCategory(productName);
 
+            if (products.isEmpty()) {
+                products = productDao.findByProductName(productName);
+            }
+
             response.addObject("products", products);
             response.addObject("productSearch", productName);
 

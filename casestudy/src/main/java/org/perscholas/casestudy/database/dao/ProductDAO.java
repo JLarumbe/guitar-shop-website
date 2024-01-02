@@ -13,4 +13,7 @@ public interface ProductDAO extends JpaRepository<Product, Long> {
 
     @Query("SELECT p FROM Product p WHERE LOWER(p.productCategory) LIKE LOWER(concat('%', :productCategory, '%'))")
     List<Product> findByProductCategory(String productCategory);
+
+    @Query("SELECT p FROM Product p WHERE LOWER(p.productName) LIKE LOWER(concat('%', :productName, '%'))")
+    List<Product> findByProductName(String productName);
 }
