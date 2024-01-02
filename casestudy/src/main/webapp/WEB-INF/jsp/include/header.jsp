@@ -14,6 +14,10 @@
     />
                                 <%--CSS--%>
     <link rel="stylesheet" href="/pub/css/styles.css"/>
+
+                                <%--Fonts--%>
+    <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+</head>
 </head>
 <body>
 

@@ -9,7 +9,7 @@
                 <c:when test="${not empty products}">
                     <c:forEach items="${products}" var="product">
                         <li class="product">
-                            <a class="img-wrapper" href="#">
+                            <a class="img-wrapper" href="/product/detail/${product.id}">
                                 <img src="${product.imageUrl}" alt="product image" />
                             </a>
 

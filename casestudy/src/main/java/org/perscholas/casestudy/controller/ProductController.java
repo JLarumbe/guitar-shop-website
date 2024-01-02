@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -77,6 +78,31 @@ public class ProductController {
 
         Product p = productService.createProduct(form);
         ModelAndView response = new ModelAndView("product/create");
+
+        return response;
+    }
+
+    @GetMapping("/product/detail/{id}")
+    public ModelAndView detailProduct(@PathVariable Integer id) {
+        ModelAndView response = new ModelAndView("product/detail");
+
+        Product product = productDao.findById(id);
+
+        CreateProductFormBean form = new CreateProductFormBean();
+
+        if (product != null) {
+            form.setId(product.getId());
+            form.setProductName(product.getProductName());
+            form.setProductDescription(product.getProductDescription());
+            form.setProductMSRP(product.getProductMSRP());
+            form.setImageUrl(product.getImageUrl());
+            form.setProductCategory(product.getProductCategory());
+
+        } else {
+            log.warn("Product with id " + id + " was not be found!");
+        }
+
+        response.addObject("product", form);
 
         return response;
     }
