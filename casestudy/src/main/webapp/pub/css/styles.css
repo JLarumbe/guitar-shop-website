@@ -1,5 +1,4 @@
 /*General*/
-
 body {
     margin: 0;
     padding: 0;
@@ -20,6 +19,11 @@ ul {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
 /*Header*/
 
 #header-main {
@@ -31,7 +35,6 @@ ul {
     color: black;
     border-bottom: 1px solid darkgray;
 }
-
 
 #header-sub {
     background-color: #f7f7f7;
@@ -84,12 +87,6 @@ ul {
     transform: translate(-0%, 0%);
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-}
-
 /*Home Page*/
 
 #home-page-promo-img {
@@ -134,3 +131,4 @@ a {
 
 /*Register*/
 
+/*Footer*/

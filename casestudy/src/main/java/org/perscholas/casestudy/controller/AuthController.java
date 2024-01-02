@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.perscholas.casestudy.database.dao.UserDAO;
 import org.perscholas.casestudy.database.entity.User;
 import org.perscholas.casestudy.formbean.RegisterUserFormBean;
+import org.perscholas.casestudy.security.AuthenticatedUserService;
 import org.perscholas.casestudy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,9 @@ public class AuthController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private AuthenticatedUserService authenticatedUserService;
 
     @GetMapping("/auth/login")
     public ModelAndView login() {

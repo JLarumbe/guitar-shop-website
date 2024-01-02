@@ -35,7 +35,7 @@
             </form>
         </div>
     </div>
-    <a href="#">Account</a>
+    <a href="/user/account">Account</a>
     <a href="#"
     ><i class="fa fa-shopping-cart" style="font-size: 36px"></i>
     </a>
