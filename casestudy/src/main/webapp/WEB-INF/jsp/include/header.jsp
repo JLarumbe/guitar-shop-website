@@ -39,10 +39,21 @@
             </form>
         </div>
     </div>
-    <a href="/user/account">Account</a>
-    <a href="#"
-    ><i class="fa fa-shopping-cart" style="font-size: 36px"></i>
-    </a>
+
+    <sec:authorize access="!isAuthenticated()">
+        <a href="/auth/login">Login</a>
+    </sec:authorize>
+
+    <sec:authorize access="isAuthenticated()">
+        <a href="/user/account">Account</a>
+
+        <a href="/auth/logout">Logout</a>
+
+        <a href="#"
+        ><i class="fa fa-shopping-cart" style="font-size: 36px"></i>
+        </a>
+    </sec:authorize>
+    
 </div>
 <div id="header-sub">
     <ul>

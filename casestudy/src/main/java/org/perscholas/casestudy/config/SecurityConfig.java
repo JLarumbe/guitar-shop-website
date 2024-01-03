@@ -46,7 +46,7 @@ public class SecurityConfig {
                 // this is the URL to submit the logout form
                 .logoutUrl("/auth/logout")
                 // this is the URL to go to after logout
-                .logoutSuccessUrl("/index"));
+                .logoutSuccessUrl("/"));
 
         return http.build();
     }
