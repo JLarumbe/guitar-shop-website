@@ -2,7 +2,8 @@
 
 <jsp:include page="../include/header.jsp"/>
 
-<form class="wrapper">
+<form class="wrapper" method="get" action="/cart/addItem">
+    <input type="hidden" name="productId" value="${product.id}">
     <div class="product-img">
         <img src="${product.imageUrl}" height="420" width="327">
     </div>
@@ -13,7 +14,7 @@
         </div>
         <div class="product-price-btn">
             <p>$<span>${product.productMSRP}</span></p>
-            <button type="button">Add to Cart</button>
+            <button type="submit">Add to Cart</button>
         </div>
     </div>
 </form>

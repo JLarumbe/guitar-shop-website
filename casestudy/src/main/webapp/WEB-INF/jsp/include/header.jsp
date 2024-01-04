@@ -53,7 +53,7 @@
         ><i class="fa fa-shopping-cart" style="font-size: 36px"></i>
         </a>
     </sec:authorize>
-    
+
 </div>
 <div id="header-sub">
     <ul>
