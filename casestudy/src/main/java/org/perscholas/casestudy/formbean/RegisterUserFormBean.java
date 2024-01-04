@@ -16,6 +16,25 @@ public class RegisterUserFormBean {
     @NotEmpty(message = "Please enter an email address")
     private String email;
 
+    @NotEmpty(message = "Please enter your first name")
+    private String firstName;
+
+    @NotEmpty(message = "Please enter your last name")
+    private String lastName;
+
+    @NotEmpty(message = "Please enter your city")
+    private String city;
+
+    @NotEmpty(message = "Please enter your state")
+    private String state;
+
+    @NotEmpty(message = "Please enter your address")
+    private String address;
+
+    @Pattern(regexp = "^\\d{5}(?:[-\\s]\\d{4})?$",
+            message = "Please enter a valid zip code")
+    private String zipCode;
+
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$",
             message = "Password must be at least 8 characters long, contain at least one uppercase letter, " +
                     "one lowercase letter, one number, and one special character")

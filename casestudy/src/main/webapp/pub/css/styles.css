@@ -129,8 +129,36 @@ a {
     background-color: #f7f7f7;
 }
 
+#login-container a {
+    color: darkred;
+}
+
 /*Register*/
 
+#register-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    background-color: #f7f7f7;
+}
+
+/*Account Page*/
+
+#account-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#account-page-container span{
+    font-size: 2rem;
+    color: darkred;
+}
 /*Product Card*/
 
 .product-card-container{

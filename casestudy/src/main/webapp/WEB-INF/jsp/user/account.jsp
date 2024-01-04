@@ -2,15 +2,12 @@
 
 <jsp:include page="../include/header.jsp"/>
 
-<section>
-    <div class="bg-light2 pt-5 pb-5">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="m-0">Account</h1>
-                <h2>${user.email}</h2>
-            </div>
-        </div>
-    </div>
+<section id="account-page-container">
+    <h1>Email: <span>${user.email}</span></h1>
+    <h1>First Name: <span>${user.firstName}</span></h1>
+    <h1>Last Name: <span>${user.lastName}</span></h1>
+    <h1>Address: <span>${user.address} ${user.city}, ${user.state} ${user.zipCode}</span></h1>
+
 </section>
 
 <jsp:include page="../include/footer.jsp"/>

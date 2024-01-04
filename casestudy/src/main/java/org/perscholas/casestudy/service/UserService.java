@@ -23,6 +23,12 @@ public class UserService {
         User user = new User();
 
         user.setEmail(form.getEmail().toLowerCase());
+        user.setFirstName(form.getFirstName());
+        user.setLastName(form.getLastName());
+        user.setCity(form.getCity());
+        user.setAddress(form.getAddress());
+        user.setState(form.getState());
+        user.setZipCode(form.getZipCode());
 
         String encoded = passwordEncoder.encode(form.getPassword());
         log.debug("Encoded password: " + encoded);
