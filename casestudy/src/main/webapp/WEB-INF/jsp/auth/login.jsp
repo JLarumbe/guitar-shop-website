@@ -20,6 +20,8 @@
             <button type="submit">Submit</button>
         </form>
     </div>
+
+    <p>Don't have an account? <a href="/auth/register">REGISTER</a></p>
 </section>
 
 
