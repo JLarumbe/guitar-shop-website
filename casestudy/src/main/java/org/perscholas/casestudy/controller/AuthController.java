@@ -1,5 +1,6 @@
 package org.perscholas.casestudy.controller;
 
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.perscholas.casestudy.database.dao.UserDAO;
@@ -40,7 +41,7 @@ public class AuthController {
     }
 
     @GetMapping("/auth/registerSubmit")
-    public ModelAndView registerSubmit(@Valid RegisterUserFormBean form, BindingResult bindingResult) {
+    public ModelAndView registerSubmit(@Valid RegisterUserFormBean form, BindingResult bindingResult, HttpSession session) {
         if (bindingResult.hasErrors()) {
             log.info("######################### In register submit  submit - has errors #########################");
             ModelAndView response = new ModelAndView("auth/register");
@@ -57,6 +58,8 @@ public class AuthController {
         log.info("######################### In register submit - no error found #########################");
 
         User u = userService.createUser(form);
+
+        authenticatedUserService.authenticateNewUser(session, u.getEmail(), form.getPassword());
 
         ModelAndView response = new ModelAndView();
         response.setViewName("redirect:/");
