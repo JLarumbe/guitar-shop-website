@@ -5,13 +5,17 @@
 
 <section id="account-page-container">
     <sec:authorize access="hasAnyAuthority('ADMIN')">
-        <h1>Admin Account</h1>
+        <h1><span>ADMIN ACCOUNT</span></h1>
     </sec:authorize>
 
-    <h1>Email: <span>${user.email}</span></h1>
-    <h1>First Name: <span>${user.firstName}</span></h1>
-    <h1>Last Name: <span>${user.lastName}</span></h1>
-    <h1>Address: <span>${user.address} ${user.city}, ${user.state} ${user.zipCode}</span></h1>
+    <div id="account-page-main">
+        <div id="account-page-info">
+            <h1>Email: <span>${user.email}</span></h1>
+            <h1>First Name: <span>${user.firstName}</span></h1>
+            <h1>Last Name: <span>${user.lastName}</span></h1>
+            <h1>Address: <span>${user.address} ${user.city}, ${user.state} ${user.zipCode}</span></h1>
+        </div>
+    </div>
 
 </section>
 

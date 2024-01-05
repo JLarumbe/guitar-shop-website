@@ -153,11 +153,20 @@ a {
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-color: #f7f7f7;
+
 }
 
 #account-page-container span{
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: darkred;
+}
+
+#account-page-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 /*Product Card*/
 
@@ -340,7 +349,7 @@ a {
     color: #474747;
 }
 
-span {
+.wrapper span {
     display: inline-block;
     height: 50px;
     font-family: 'Suranna', serif;

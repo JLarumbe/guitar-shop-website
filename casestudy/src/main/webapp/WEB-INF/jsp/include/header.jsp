@@ -44,6 +44,10 @@
         <a href="/auth/login">Login</a>
     </sec:authorize>
 
+    <sec:authorize access="hasAnyAuthority('ADMIN')">
+        <a href="/product/create">Create Product</a>
+    </sec:authorize>
+
     <sec:authorize access="isAuthenticated()">
         <a href="/user/account">Account</a>
 
