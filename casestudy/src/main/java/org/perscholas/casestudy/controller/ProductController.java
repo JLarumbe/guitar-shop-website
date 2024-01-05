@@ -7,6 +7,7 @@ import org.perscholas.casestudy.database.entity.Product;
 import org.perscholas.casestudy.formbean.CreateProductFormBean;
 import org.perscholas.casestudy.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -50,6 +51,7 @@ public class ProductController {
         return response;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/product/create")
     public ModelAndView createProduct() {
         ModelAndView response = new ModelAndView("product/create");
@@ -59,6 +61,7 @@ public class ProductController {
         return response;
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/product/createSubmit")
     public ModelAndView createProductSubmit(@Valid CreateProductFormBean form, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

@@ -21,9 +21,9 @@ public class UserController {
     public ModelAndView viewAccount() {
         ModelAndView response = new ModelAndView("user/account");
 
-        log.debug("In view account");
-
         User user = authenticatedUserService.loadCurrentUser();
+
+        log.debug("User: " + user.getEmail() + " in view account");
 
         response.addObject("user", user);
 
