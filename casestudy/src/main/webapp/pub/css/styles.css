@@ -370,4 +370,13 @@ span {
 .product-price-btn button:hover {
     background-color: black;
 }
+/*Product Create*/
+#product-create-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 100px;
+}
+
 /*Footer*/

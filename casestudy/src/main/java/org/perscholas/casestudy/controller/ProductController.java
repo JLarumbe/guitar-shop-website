@@ -51,7 +51,7 @@ public class ProductController {
         return response;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     @GetMapping("/product/create")
     public ModelAndView createProduct() {
         ModelAndView response = new ModelAndView("product/create");
@@ -61,6 +61,7 @@ public class ProductController {
         return response;
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     @GetMapping("/product/edit/{id}")
     public ModelAndView editProduct(@PathVariable Integer id) {
         ModelAndView response = new ModelAndView("product/create");
@@ -86,6 +87,7 @@ public class ProductController {
         return response;
     }
 
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
     @GetMapping("/product/createSubmit")
     public ModelAndView createProductSubmit(@Valid CreateProductFormBean form, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {

@@ -2,7 +2,7 @@
 
 <jsp:include page="../include/header.jsp"/>
 
-<section>
+<section id="product-create-container">
     <div class="container">
         <!-- the action attribute on the form tag is the URL that the form will submit to when then user clicks the submit button -->
         <form method="get" action="/product/createSubmit">
