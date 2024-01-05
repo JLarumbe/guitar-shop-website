@@ -61,7 +61,31 @@ public class ProductController {
         return response;
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/product/edit/{id}")
+    public ModelAndView editProduct(@PathVariable Integer id) {
+        ModelAndView response = new ModelAndView("product/create");
+
+        Product product = productDao.findById(id);
+
+        CreateProductFormBean form = new CreateProductFormBean();
+
+        if (product != null) {
+            form.setId(product.getId());
+            form.setProductName(product.getProductName());
+            form.setProductDescription(product.getProductDescription());
+            form.setProductMSRP(product.getProductMSRP());
+            form.setImageUrl(product.getImageUrl());
+            form.setProductCategory(product.getProductCategory());
+
+        } else {
+            log.warn("Product with id " + id + " was not be found!");
+        }
+
+        response.addObject("form", form);
+
+        return response;
+    }
+
     @GetMapping("/product/createSubmit")
     public ModelAndView createProductSubmit(@Valid CreateProductFormBean form, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -80,7 +104,7 @@ public class ProductController {
         log.info("######################### In create customer submit - no error found #########################");
 
         Product p = productService.createProduct(form);
-        ModelAndView response = new ModelAndView("product/create");
+        ModelAndView response = new ModelAndView("redirect:/product/detail/" + p.getId());
 
         return response;
     }

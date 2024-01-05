@@ -3,16 +3,6 @@
 <jsp:include page="../include/header.jsp"/>
 
 <section>
-    <div class="bg-light2 pt-5 pb-5">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h1 class="m-0">Create Product</h1>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
     <div class="container">
         <!-- the action attribute on the form tag is the URL that the form will submit to when then user clicks the submit button -->
         <form method="get" action="/product/createSubmit">
