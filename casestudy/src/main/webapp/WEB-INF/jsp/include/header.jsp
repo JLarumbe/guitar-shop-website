@@ -66,6 +66,6 @@
         <li><a href="/product/search?productName=bass">Basses</a></li>
         <li><a href="/product/search?productName=amp">Amps & Audio</a></li>
         <li><a href="/product/search?productName=pedal">Effects Pedals</a></li>
-        <li><a href="/product/search?productName=picks">Accessories</a></li>
+        <li><a href="/product/search?productName=accessory">Accessories</a></li>
     </ul>
 </div>
