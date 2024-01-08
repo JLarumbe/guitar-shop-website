@@ -53,7 +53,7 @@
 
         <a href="/auth/logout">Logout</a>
 
-        <a href="#"
+        <a href="/cart/viewCart"
         ><i class="fa fa-shopping-cart" style="font-size: 36px"></i>
         </a>
     </sec:authorize>
