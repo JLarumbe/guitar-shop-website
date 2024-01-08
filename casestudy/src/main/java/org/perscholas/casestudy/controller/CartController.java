@@ -10,6 +10,7 @@ import org.perscholas.casestudy.database.entity.Product;
 import org.perscholas.casestudy.database.entity.User;
 import org.perscholas.casestudy.security.AuthenticatedUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +21,7 @@ import java.util.List;
 
 @Slf4j
 @Controller
+@PreAuthorize("hasAnyAuthority('USER', 'ADMIN')")
 public class CartController {
     @Autowired
     ProductDAO productDAO;
@@ -84,11 +86,15 @@ public class CartController {
 
         log.debug("In view cart controller method with email = " + user.getEmail());
 
+        double totalPrice = 0;
+
         for(OrderDetail orderDetail : orderDetails) {
             log.debug("Product: " + orderDetail.getProduct().getProductName() + " Quantity: " + orderDetail.getQuantity());
+            totalPrice += orderDetail.getProduct().getProductMSRP().intValue() * orderDetail.getQuantity();
         }
 
         response.addObject("orderDetails", orderDetails);
+        response.addObject("totalPrice", totalPrice);
 
         return response;
     }
