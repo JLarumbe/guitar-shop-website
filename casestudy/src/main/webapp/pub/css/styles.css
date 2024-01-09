@@ -444,7 +444,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1687d9;
+    background-color: #e32d2c;
     border: none;
     border-radius: 10px;
     color: white;
@@ -454,7 +454,7 @@ a {
 }
 
 .checkout-btn button{
-    background-color: #1687d9;
+    background-color: #e32d2c;
     border: none;
     font-size: 15px;
     font-weight: bold;
