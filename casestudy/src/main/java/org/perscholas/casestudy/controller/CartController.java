@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -82,11 +83,17 @@ public class CartController {
 
         Order order = orderDAO.findByUser(user.getId());
 
+        if(order == null) {
+            log.debug("No order found for user " + user.getEmail());
+            response.setViewName("redirect:/");
+            return response;
+        }
+
         List<OrderDetail> orderDetails = orderDetailDAO.findByOrderId(order.getId());
 
         log.debug("In view cart controller method with email = " + user.getEmail());
 
-        double totalPrice = 0;
+        int totalPrice = 0;
 
         for(OrderDetail orderDetail : orderDetails) {
             log.debug("Product: " + orderDetail.getProduct().getProductName() + " Quantity: " + orderDetail.getQuantity());
@@ -98,4 +105,68 @@ public class CartController {
 
         return response;
     }
+
+    @GetMapping("/cart/checkout")
+    public ModelAndView checkout() {
+        ModelAndView response = new ModelAndView("cart/checkout");
+
+        User user = authenticatedUserService.loadCurrentUser();
+
+        Order order = orderDAO.findByUser(user.getId());
+
+
+        return response;
+    }
+
+    @GetMapping("/cart/checkoutSubmit")
+    public ModelAndView checkoutSubmit() {
+        ModelAndView response = new ModelAndView("cart/orderPlaced");
+
+        User user = authenticatedUserService.loadCurrentUser();
+
+        Order order = orderDAO.findByUser(user.getId());
+
+        order.setStatus("ORDERED");
+        orderDAO.save(order);
+
+        return response;
+    }
+
+    @GetMapping("/cart/orderPlaced")
+    public ModelAndView orderPlaced() {
+        ModelAndView response = new ModelAndView("cart/orderPlaced");
+
+        return response;
+    }
+
+    @GetMapping("/cart/removeItem/{id}")
+    public String removeItem(@PathVariable Integer id) {
+        User user = authenticatedUserService.loadCurrentUser();
+
+        Product product = productDAO.findById(id);
+        log.debug("In remove from cart controller method with productId = " + product.getId() + " and email = " + user.getEmail());
+
+        Order order = orderDAO.findByUser(user.getId());
+
+        if(order == null) {
+            log.debug("No order found for user " + user.getEmail());
+            return "redirect:/";
+        } else {
+            log.debug("Found existing order for user " + user.getEmail());
+        }
+
+        OrderDetail orderDetail = orderDetailDAO.findByOrderIdAndProductId(order.getId(), id);
+
+        if(orderDetail == null) {
+            log.debug("No order detail found for order " + order.getId() + " and product " + product.getId());
+            return "redirect:/";
+        } else {
+            log.debug("Found existing order detail for order " + order.getId() + " and product " + product.getId());
+            orderDetailDAO.delete(orderDetail);
+        }
+
+        return "redirect:/cart/viewCart";
+    }
+
+
 }
