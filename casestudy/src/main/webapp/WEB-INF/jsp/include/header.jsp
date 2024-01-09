@@ -20,9 +20,8 @@
 </head>
 </head>
 <body>
-
 <div id="header-main">
-    <a href="/"><img src="/pub/images/logo.jpg" alt="logo" /></a>
+    <a href="/" id="logo"><img src="/pub/images/logo.jpg" alt="logo" /></a>
     <div class="wrap">
         <div class="search">
             <form id="search-form" method="get" action="/product/search">
