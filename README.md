@@ -2,7 +2,7 @@
 This project is a mock e-commerce website for selling guitars, designed as part of a portfolio to showcase skills in web development and design using Java and Spring Boot.
 
 # About This Project
-The Guitar Emporium Portfolio Project is a demonstration of my proficiency in full-stack web development using Java and Spring Boot. It simulates an online store where users can browse a catalog of guitars and accessories, add items to their cart, and proceed to a checkout process.
+LJ's Guitars Portfolio Project is a demonstration of my proficiency in full-stack web development using Java and Spring Boot. It simulates an online store where users can browse a catalog of guitars and accessories, add items to their cart, and proceed to a checkout process.
 
 # Technologies Used
 - Backend: Java, Spring Boot
@@ -17,7 +17,7 @@ The Guitar Emporium Portfolio Project is a demonstration of my proficiency in fu
 - Checkout Process: Guide users through a secure checkout process with shipping and payment details.
 - RESTful API: Implement a RESTful API for accessing and managing data.
 - Security: Implement security measures such as authentication and authorization to protect user data.
-Project Setup
+# Project Setup
 - Clone the Repository: Clone this repository to your local machine using git clone.
 - Database Configuration: Set up a MySQL and configure the connection properties in the application.properties file.
 - Run the Application: Open the project in your preferred IDE (IntelliJ IDEA or Eclipse) and run the application.
