@@ -17,11 +17,6 @@ LJ's Guitars Portfolio Project is a demonstration of my proficiency in full-stac
 - Checkout Process: Guide users through a secure checkout process with shipping and payment details.
 - RESTful API: Implement a RESTful API for accessing and managing data.
 - Security: Implement security measures such as authentication and authorization to protect user data.
-# Project Setup
-- Clone the Repository: Clone this repository to your local machine using git clone.
-- Database Configuration: Set up a MySQL and configure the connection properties in the application.properties file.
-- Run the Application: Open the project in your preferred IDE (IntelliJ IDEA or Eclipse) and run the application.
-- View the Website: Open your web browser and navigate to http://localhost:8080 to view website.
 
 # Screenshots
 Screenshot of home page.
