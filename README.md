@@ -30,7 +30,7 @@ Screenshot of home page.
 Screenshot of pages showcasing featured guitars.
 <img width="960" alt="item display" src="https://github.com/JLarumbe/guitar-shop-website/assets/29000793/cefe95cd-53dd-4159-a6c7-59fde54924f6">
 
-Screenshot of a product page displaying details and options for a selected guitar. (The edit product is only available to admin accounts)
+Screenshot of a product page displaying details and options for a selected guitar. 
 <img width="960" alt="product details" src="https://github.com/JLarumbe/guitar-shop-website/assets/29000793/3be23251-eedd-4d50-8f8d-14cc4ae0483f">
 
 
